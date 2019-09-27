@@ -31,3 +31,11 @@ console.log(sample.textContent);
 document.getElementById("sample").textContent = "testtesttest";
 
 ```
+
+* valueとval()
+valueとval()は別物
+
+.valueは、valueというプロパティの値を取得する
+.val()は、Jqueryの関数。
+
+
