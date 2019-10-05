@@ -41,4 +41,38 @@
  </body>
 </html>
 
+# v-if、v-elseなど
+
+```index.html
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+    <p v-if="ok">OK!</p>
+    <P v-else-if="maybeOk">maybeOk</P>
+    <p v-else>Not OK...</p><!--V-ifの直後にこないとだめ-->
+  </div>
+
+ <script>
+   new Vue ({
+     el: '#app',
+     data: {
+       ok: false,
+       maybeOk: true
+     }
+   })
+  </script>
+ </body>
+</html>
+
 ```
