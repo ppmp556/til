@@ -78,3 +78,47 @@
 </html>
 
 ```
+
+# templateタグ、v-showとv-if
+
+```index.html
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+    <template v-if="ok"><!--グループ化させる、consolelog表示しない-->
+      <p>hellow</p>
+      <p>おはよう</p>
+      <p>こんにちは</p>
+    </template>
+    <p v-if="ok">if</p><!--要素ごと-->>
+    <p v-show="show">show</p><!--display noneで消す,v-else,template使えない-->
+　
+
+    <button @click= "ok = !ok">きりかえ</button>
+  </div>
+
+ <script>
+   new Vue ({
+     el: '#app',
+     data: {
+       ok: true
+     }
+   })
+  </script>
+ </body>
+</html>
+
+
+```
+
