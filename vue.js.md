@@ -122,3 +122,51 @@
 
 ```
 
+# 複数インスタンスの書き方
+
+```index.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app1">
+   <p>{{message}}</p>
+  </div>
+  <div id="app2">
+    <P>{{message}}</P>
+    <button @click="changeMessage1">インスタンス1のmessageを変更</button>
+  </div>
+
+ <script>
+   var vm1 = new Vue ({
+     el: '#app1',
+     data: { 
+       message: 'インスタンス1'
+     }
+   })
+
+   var vm2 = new Vue({
+     el: '#app2',
+     data: {
+       message: 'インスタンス2'
+     },
+     methods: {
+       changeMessage1: function() {
+         vm1.message = 'インスタンス2から変更'
+       }
+     }
+   })
+  </script>
+ </body>
+</html>
+
+```
+
