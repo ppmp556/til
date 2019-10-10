@@ -170,3 +170,63 @@
 
 ```
 
+# computedとmethods
+
+```index.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+  <input type="text" v-model="message">
+  <h1>{{message}}</h1>
+
+  <p>{{counter}}</p>
+  <button @click="counter += 1">+1</button>
+  <p>{{ lessThanThree }}</p>　<!--computedプロパティ()はつけない-->
+  <p>{{ lessThanThreeMethod()}}</p><!--methodsは()つける-->
+
+  </div>
+
+ <script>
+   new Vue ({
+     el: '#app',
+     data: {
+       message:'こんばんは',
+
+       counter:0,
+     },
+     computed: {
+       lessThanThree: function() { //関数を置く
+　　　　return this.counter > 3 ? '3より↑':'3以下' //return 同期処理
+       }
+     },
+     watch: { 
+      counter: function() {
+         var vm = this;
+　　　　　setTimeout(function(){
+　　　　　vm.counter = 0
+     },3000)
+      }
+     },
+     methods: {
+       lessThanThreeMethod: function() {
+         return this.counter > 3 ?'3より上':'3以下'
+       }
+     }
+     
+    })
+
+  </script>
+ </body>
+</html>
+
+```
