@@ -1,3 +1,47 @@
+# Sassでの演算
+
+```sample.scss
+
+/*足し算*/
+.example01 {
+  width: 500px + 8;
+}
+
+/*かけ算*/
+.example02 {
+  width: 500px * 8;
+}
+
+/*割り算*/
+.example03 {
+  width: (500px/8);
+}
+
+/*割り算の余り*/
+.example04{
+  width: 100px % 3;
+}
+
+
+article {
+  width: 300px + 5cm;
+}
+
+/*変数と演算の同時利用*/
+$main_width: 560px;
+article {
+   width: $main_width -7 * 2;
+   padding: 0 7px;
+}
+
+/*色の演算*/
+a {
+  color: #000 + #111;
+}
+
+```
+
+
 # Sassでの変数について
 
 ```sample.scss
