@@ -39,6 +39,12 @@
    })
   </script>
   
+ </body>
+</html>
+
+```
+  
+  
  # $monut(),template,render
   
   ```index.html
@@ -109,9 +115,6 @@
   </body>
 </html>
   
-  ```
- </body>
-</html>
 
 ```
 
