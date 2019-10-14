@@ -38,6 +38,78 @@
        } 
    })
   </script>
+  
+ # $monut(),template,render
+  
+  ```index.html
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app1">
+   <p>{{message}}</p>
+   <p>{{name}}</p>
+   <p>{{myData}}</p>
+   <button @click="message = 'ボタンから変更'">変更</button>
+  </div>
+  <div id="app2">
+  </div>
+  <div id="app3">
+    
+  </div>
+
+ <script>
+   var data = {
+     message: 'こんにちは',
+     name: '太郎'
+   }
+
+   Vue.component() {
+     
+   }
+
+   var vm = new Vue ({
+     data: data,
+     computed: {
+       myData: function() {
+         return this.$data;
+       } 
+     }
+   })
+
+   vm.$mount('#app1') //$mountはelプロパティのかわり
+   
+   new Vue({
+     data: {
+       name: '太郎'
+     },
+     template: '<h1>こんにちは、{{name}}</h1>' //templateプロパティ
+
+   }).$mount('#app2')
+
+   new Vue({
+     data: {
+       name: '太郎'
+     },
+     render: function(createElement) {
+       return createElement('h1', 'こんにちは、' + this.name);
+
+     },
+   }).$mount('#app3')
+
+   </script>
+  </body>
+</html>
+  
+  ```
  </body>
 </html>
 
