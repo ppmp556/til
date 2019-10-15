@@ -1,3 +1,92 @@
+# スタイルの継承、エクステンド
+
+```sample.scss
+
+/*指定したセレクタのスタイルを継承*/
+
+.box {
+  margin: 0 0 30px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+//.boxで使ったスタイルを継承
+.item {
+  @extend .box;
+}
+
+
+/*同じルールセット内で、複数継承*/
+/*エクステンド*/
+.notes {
+  color: #d92c25;
+  font-weight: bold;
+  text-align: center;
+}
+.bd {
+  border-top:1px solid #900;
+  border-bottom: 1px solid #900;
+}
+
+//複数継承
+.item {
+  small {
+    display: block;
+    padding: 10px;
+    @extend .notes;
+    @extend .bd;
+  }
+}
+
+/*エクステンドの連鎖*/
+.att {
+  color: red;
+  font-weight: normal;
+}
+.attBox {
+  // .attを継承
+  @extend .att;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.notes {
+  //.attが継承されている、.attBoxを継承（連鎖）
+  @extend .attBox;
+}
+
+//エクステンド専用のプレースホルダーセレクタ
+//継承元のセレクタ不要
+%boxBase {
+  padding: 15px;
+  border: 1px solid #999;
+}
+
+/*プレースホルダーセレクタを継承*/
+.item {
+  @extend %boxBase;
+  margin-bottom: 20px;
+}
+section {
+  @extend %boxBase;
+  margin-bottom: 60px;
+}
+
+/*エクステンド内@media使用*/
+@media all and (orientation: landscape){
+  %btnBase{
+    display: inline-block;
+    padding: 5px 10px;
+    background: #eee;
+  }
+  a {
+    @extend %btnBase;
+  }
+}
+
+```
+
+
 # Sassでの演算
 
 ```sample.scss
