@@ -1,3 +1,21 @@
+# @at-root
+
+```sample.scss
+//@at-rootは記述した場所より親のセレクタや@mediaなどを除外
+//ルートに戻す
+
+.block{
+  .element-A {
+    width: 80%;
+  }
+  @at-root .element-B {
+    width: 100%;
+  }
+
+```
+
+
+
 # スタイルの継承、エクステンド
 
 ```sample.scss
