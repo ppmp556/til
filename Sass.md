@@ -1,3 +1,33 @@
+# @ifで条件分岐
+
+```sample.scss
+$getStyle: 0;
+
+@mixin style {
+  @if $getStyle == 1 {
+    margin: 0 0 30px;
+    padding: 15px;
+    background: #eee;
+  }
+  @else if $getStyle == 2 {
+    marging: 0 10px 15px;
+    padding: 20px 15px;
+    border: 2px solid #333;
+
+  }
+  @else {
+    margin: 0 0 10px;
+  }
+}
+
+.box  {
+  @include style;
+}
+
+```
+
+
+
 # @at-root
 
 ```sample.scss
