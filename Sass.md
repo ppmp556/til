@@ -1,3 +1,20 @@
+# @forで繰り返し処理
+
+```sample.scss
+@for $value from 1 through 3 {
+  .throughSample_#{$value} {
+    margin-bottom: 1px * $value;
+  }
+}
+@for $value from 1 to 3 {
+  .toSample_#{value} {
+    margin-bottom: 1px * $value;
+  }
+}
+
+```
+
+
 # @ifで条件分岐
 
 ```sample.scss
