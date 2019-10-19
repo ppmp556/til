@@ -1,3 +1,47 @@
+# いくつかの関数
+
+```sample.scss
+//数値の絶対値を取得する　abs()
+$margin: -15px;
+section {
+  margin-left: $margin;
+  .item {
+   float: left;
+   width: 200px;
+   margin-left: abs($margin);
+  }
+}
+//小数点以下を四捨五入　round()
+$width: 100%;
+
+.boxA {
+  width: $width / 6;
+}
+.boxB {
+  width: round($width/6);
+}
+
+//小数点以下切り上げ　ceil()
+//小数点以下切り捨て　floor()
+$width: 100%;
+.boxA {
+  width: $width / 3;
+}
+.boxB {
+  width: ceil($width /3);
+}
+
+$width: 100%;
+.boxA {
+  width: $width / 3;
+}
+.boxB {
+  width: floor($width /3);
+}
+
+```
+
+
 # @forで繰り返し処理
 
 ```sample.scss
