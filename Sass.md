@@ -1,3 +1,44 @@
+# nth(),セレクタ置換,mix()
+```sample.scss
+/*2つのカラーコードの中間色をつくるmix()*/
+body {
+  background: mix(#000, #fff, 50%);
+}
+
+$a: #000;
+$b: #fff;
+
+.boxA {
+  background: mix($a, $b, 70%);
+}
+.boxB {
+  background: mix($a,$b, 30%);
+}
+
+
+/*リストのN番目の値を取得できる nth()*/
+$nameList: top, about,company;
+.item {
+  background: url(#{nth($nameList,2)}.png);
+}
+
+/*指定したキーの値を取得する*/
+$colors: (
+  twitter: #1b95e0,
+  facebook: #3b5998,
+);
+.sns-twitter {
+  color: map-get($colors, twitter);
+}
+
+/*セレクタを置換する　selector-replace*/
+#{selector-replace(".item .text", ".text", ".image")} {
+  float: left;
+}
+
+```
+
+
 # いくつかの関数
 
 ```sample.scss
