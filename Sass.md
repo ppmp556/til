@@ -1,3 +1,46 @@
+# 関数と引数
+
+```sample.scss
+/*サイズを半分にする関数*/
+@function halfsize($value) {
+  @return $value / 2;
+}
+.boxA {
+  width: halfsize(100px);
+}
+
+@function halfsize($value) {
+  @return round($value / 2);
+}
+.boxA {
+  width: halfsize(105px);
+}
+
+/*値を変数に入れる*/
+$width: 105px;
+@function halfsize() {
+  @return round($width / 2);
+}
+.boxA {
+  width: halfsize();
+}
+
+/*引数に初期値を設定する*/
+$width: 105px;
+@function halfsize($value:$width) {
+  @return round($value / 2);
+}
+.boxA {
+  width: halfsize();
+}
+.boxB {
+  width: halfsize(200px);
+}
+
+```
+
+
+
 # nth(),セレクタ置換,mix()
 ```sample.scss
 /*2つのカラーコードの中間色をつくるmix()*/
