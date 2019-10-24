@@ -1,3 +1,64 @@
+# v-model サンプル
+
+```index.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js neko</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <input v-model="message"><!--v-model:フォームの入力値をデータと同期させる-->
+        <p>{{message}}</p>
+        <textarea v-model="message1"></textarea><!--複数行テキストの値は文字列-->
+        <pre>{{message1}}</pre>
+
+        <label>
+            <input type="checkbox" v-model="val">
+            {{val}}
+        </label>
+
+        <label><input type="checkbox" v-model="val1" value="A">A</label>
+        <label><input type="checkbox" v-model="val1" value="B">B</label>
+        <label><input type="checkbox" v-model="val1" value="C">C</label>
+        {{val1}}
+
+        <label><input type="radio" v-model="val_radio" value="a">A</label>
+        <label><input type="radio" v-model="val_radio" value="b">B</label>
+        <label><input type="radio" v-model="val_radio" value="c">C</label>
+        {{val_radio}}
+
+        <input type="text" v-model.number="price"> {{price}}
+
+   
+    </div>
+
+
+
+    <script>
+    new Vue ({
+      el: '#app',// elはアプリケーションを紐付ける要素セレクタ
+    　data: {
+        message: 'vue.js',
+        message1: 'hello',
+        val: true,
+        val1: [],
+        val_radio: '',
+        price: 100
+    }
+  })
+    </script>
+</body>
+</html>
+
+```
+
+
 # オブジェクトと配列構文　サンプル
 
 ```index.html
